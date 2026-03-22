@@ -1,6 +1,6 @@
 # larkm2ctl
 
-Command-line tool for controlling the [Hollyland Lark M2](https://www.hollyland.com/product/lark-m2) wireless microphone system on Linux via USB.
+Command-line tool for controlling the [Hollyland Lark M2](https://www.hollyland.com/product/lark-m2) wireless microphone on Linux via USB.
 
 Communicates directly with the receiver (RX) over HID, letting you query status, adjust gain, toggle noise cancellation, and more - no official app required.
 
