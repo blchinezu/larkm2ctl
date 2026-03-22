@@ -2,29 +2,13 @@
 
 Command-line tool for controlling the [Hollyland Lark M2](https://www.hollyland.com/product/lark-m2) wireless microphone on Linux via USB.
 
-Communicates directly with the receiver (RX) over HID, letting you query status, adjust gain, toggle noise cancellation, and more - no official app required.
-
-## Features
-
-- Real-time transmitter status (connection, battery level)
-- Microphone gain control (levels 0–5)
-- Noise cancellation on/off and strength (weak/strong)
-- Firmware version and serial number queries
-- Live monitoring mode
-- Device reboot
-- Raw command interface for protocol debugging
+Communicates directly with the receiver (RX) over HID, letting you query status, adjust gain, toggle noise cancellation, adjust noise cancellation level.
 
 ## Requirements
 
 - Linux with `/dev/hidraw*` support
 - Go 1.24+ (to build from source)
-- Appropriate permissions to access HID devices (see [Permissions](#permissions))
-
-## Building
-
-```sh
-go build -o larkm2ctl
-```
+- Appropriate permissions to access HID devices
 
 ## Permissions
 
@@ -88,10 +72,9 @@ TX2 FW: 0.0.0.0
 
 The tool discovers the Lark M2 receiver by scanning `/dev/hidraw*` devices for USB VID `3547` / PID `0007`. It communicates using a binary protocol (64-byte HID reports).
 
-## Project Structure
+## Building
 
+```sh
+go build -o larkm2ctl
 ```
-main.go       CLI entry point, command handlers, output formatting
-device.go     HID device discovery, open, read/write, get/set methods
-protocol.go   Packet encoding/decoding, constants, data structures
-```
+
